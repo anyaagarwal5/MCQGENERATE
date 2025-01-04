@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Results</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f5;
+            padding: 30px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+        h1 {
+            text-align: center;
+            color: #2d3e50;
+            margin-bottom: 25px;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .mcq {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #fff3e0;
+            border: 1px solid #b1b3f5;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .mcq:hover {
+            background-color: #d3d7d8;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-weight: 600;
+            color: #3a3a3a;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+        .options {
+            margin: 12px 0;
+        }
+        .option {
+            padding: 12px;
+            margin: 8px 0;
+            border: 2px solid #b5b5b5;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            background-color: #f2f2f2;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .option:hover {
+            background-color: #f5d0a9;
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .correct-answer {
+            font-weight: 700;
+            color: #388e3c;
+            margin-top: 15px;
+            font-size: 18px;
+            display: none;
+            text-transform: uppercase;
+        }
+        .incorrect-answer {
+            font-weight: 700;
+            color: #d32f2f;
+            margin-top: 15px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 18px;
+            background-color: #388e3c;
+            color: white;
+            text-decoration: none;
+            margin-top: 25px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        a:hover {
+            background-color: #2c6f3f;
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        function handleOptionClick(event, mcqElement, correctAnswer) {
+            const selectedOption = event.target;
+
+            // If the selected option is correct, highlight it
+            if (selectedOption.classList.contains(correctAnswer)) {
+                selectedOption.style.backgroundColor = '#4e8d43'; // Correct answer in green
+            } else {
+                // If the selected option is incorrect, turn it red
+                selectedOption.style.backgroundColor = '#e60000'; // Incorrect answer in red
+
+                // Highlight the correct answer in green
+                const correctOption = mcqElement.querySelector('.' + correctAnswer);
+                correctOption.style.backgroundColor = '#4e8d43'; // Correct answer in green
+            }
+
+            // Disable further clicks on the options
+            const options = mcqElement.querySelectorAll('.option');
+            options.forEach(option => {
+                option.style.pointerEvents = 'none'; // Disable further clicking
+            });
+
+            // Show correct answer text
+            const correctAnswerDiv = mcqElement.querySelector('.correct-answer');
+            correctAnswerDiv.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Generated MCQs</h1>
+
+        {% for mcq in mcqs.split("## MCQ") %}
+            {% if mcq.strip() %}
+                <div class="mcq">
+                    <div class="question">{{ mcq.split('A)')[0].strip() }}</div>
+                    <div class="options">
+                        <div class="option A" onclick="handleOptionClick(event, this.parentElement.parentElement, 'A')">A) {{ mcq.split('A)')[1].split('B)')[0].strip() }}</div>
+                        <div class="option B" onclick="handleOptionClick(event, this.parentElement.parentElement, 'B')">B) {{ mcq.split('B)')[1].split('C)')[0].strip() }}</div>
+                        <div class="option C" onclick="handleOptionClick(event, this.parentElement.parentElement, 'C')">C) {{ mcq.split('C)')[1].split('D)')[0].strip() }}</div>
+                        <div class="option D" onclick="handleOptionClick(event, this.parentElement.parentElement, 'D')">D) {{ mcq.split('D)')[1].split('Correct Answer:')[0].strip() }}</div>
+                    </div>
+                    <div class="correct-answer">
+                        Correct Answer: {{ mcq.split('Correct Answer:')[1].strip() }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        
+
+        <a href="/download/{{ txt_filename }}">Download as TXT</a>
+        <a href="/download/{{ pdf_filename }}">Download as PDF</a>
+    </div>
+</body>
+</html>

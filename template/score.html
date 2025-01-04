@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Score</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .score-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .score-card h1 {
+            font-size: 2.5rem;
+            color: #4caf50;
+        }
+        .score-card p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .home-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .home-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="score-card">
+        <h1>Congratulations!</h1>
+        <p>Your score is:</p>
+        <h2>{{ score }}/{{ total }}</h2>
+        <p>Great job on the quiz! 🎉</p>
+        <a href="/" class="home-button">Go to Home</a>
+    </div>
+</body>
+</html>

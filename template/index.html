@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f5e6d3, #eedcc9);
+            color: #333;
+        }
+
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #5a4a42;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        h1:before {
+            content: "📝";
+            position: absolute;
+            left: -40px;
+            font-size: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #5a4a42;
+        }
+
+        input[type="file"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #f8f4f0;
+            color: #333;
+        }
+
+        button {
+            background-color: #a67c52;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #8c6741;
+        }
+
+        .mcq {
+            background-color: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            color: #333;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mcq p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #d2a679;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        a:hover {
+            background-color: #b08968;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #5a4a42;
+        }
+
+        footer:before {
+            content: "©";
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate MCQs from Your Text</h1>
+        <form action="/generate" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">📄 Upload your document (PDF, TXT, DOCX):</label>
+                <input type="file" name="file" required>
+            </div>
+            <div class="form-group">
+                <label for="num_questions">❓ How many questions do you want?</label>
+                <input type="number" name="num_questions" min="1" required>
+            </div>
+            <button type="submit">🔍 Generate MCQs</button>
+        </form>
+    </div>
+    <footer>
+        MCQ Generator &copy; 2025
+    </footer>
+</body>
+</html>
