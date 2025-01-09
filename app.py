@@ -12,9 +12,9 @@ os.environ["GOOGLE_API_KEY"] = "AIzaSyArt_l2lTLRYKUmPsZ_jkoAhb17TdKuS-w"
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("models/gemini-1.5-pro")
 
-app = Flask(__name__ ,template_folder='template')
-app.config['UPLOAD_FOLDER'] = 'uploads/'
-app.config['RESULTS_FOLDER'] = 'results/'
+app = Flask(__name__, template_folder='template')
+app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'uploads')
+app.config['RESULTS_FOLDER'] = os.path.join(os.getcwd(), 'results')
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'txt', 'docx'}
 
 def allowed_file(filename):

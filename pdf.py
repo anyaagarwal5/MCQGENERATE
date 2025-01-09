@@ -6,6 +6,7 @@ import torch
 import base64
 import tempfile
 from fpdf import FPDF  # To generate a PDF for saving the summary
+from rouge_score import rouge_scorer  # For ROUGE score calculation
 
 # Set up Streamlit page configuration
 st.set_page_config(layout="wide", page_title="PDF Summarization App")
@@ -64,6 +65,12 @@ def summarize_pdf(uploaded_file, max_length):
         return summary
     else:
         return "Could not generate summary due to an error."
+
+# ROUGE score function
+def calculate_rouge_scores(reference_summary, generated_summary):
+    scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
+    scores = scorer.score(reference_summary, generated_summary)
+    return scores
 
 # Display PDF in the app
 def display_pdf(uploaded_file):
@@ -129,6 +136,17 @@ def main():
                             file_name="summary.pdf",
                             mime="application/pdf"
                         )
+
+                # Ask user to input reference summary for ROUGE score
+                reference_summary = st.text_area("Enter reference summary for ROUGE score evaluation", "")
+                
+                if reference_summary:
+                    # Calculate ROUGE score only if the reference summary is provided
+                    rouge_scores = calculate_rouge_scores(reference_summary, summary)
+                    st.write("ROUGE Scores:")
+                    st.write(f"ROUGE-1: {rouge_scores['rouge1']}")
+                    st.write(f"ROUGE-2: {rouge_scores['rouge2']}")
+                    st.write(f"ROUGE-L: {rouge_scores['rougeL']}")
 
 if __name__ == "__main__":
     main()

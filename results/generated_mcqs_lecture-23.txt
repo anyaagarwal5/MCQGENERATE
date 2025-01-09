@@ -1,9 +1,9 @@
 ## MCQ 1
 Question: What is Cross-Site Request Forgery (CSRF)?
-A) An attack that forces a user to log out of an application.
-B) An attack that tricks a web browser into executing unwanted actions in an application where a user is logged in.
-C) A type of virus that infects web browsers.
-D) A method for securely transferring funds online.
+A) An attack that forces a user to log out of a web application.
+B) An attack that tricks a web browser into executing unwanted actions in an application where the user is logged in.
+C) A type of virus that infects a user's computer.
+D) A phishing attack that steals user credentials.
 Correct Answer: B
 
 ## MCQ 2
@@ -15,34 +15,26 @@ D) Installation of malware on the user's computer
 Correct Answer: D
 
 ## MCQ 3
-Question: How does a CSRF attack typically trick a user into executing a forged request?
+Question: How does a CSRF attack typically trick a user?
 A) By installing a keylogger on the user's computer.
-B) By using malicious social engineering, such as an email or link.
-C) By exploiting a vulnerability in the web server software.
-D) By directly accessing the user's bank account.
+B) By sending a malicious email or link that triggers a forged request.
+C) By directly accessing the web application's server.
+D) By using brute-force to guess the user's password.
 Correct Answer: B
 
 ## MCQ 4
 Question: Which of the following is a primary approach to prevent CSRF attacks?
-A) Installing antivirus software.
-B) Using strong passwords.
-C) Synchronizing the cookie with an anti-CSRF token.
-D) Disabling JavaScript in the web browser.
+A) Using strong passwords
+B) Installing antivirus software
+C) Synchronizing the cookie with an anti-CSRF token
+D) Regularly clearing browser history
 Correct Answer: C
 
+
 ## MCQ 5
-Question:  What is the purpose of the SameSite cookie attribute?
-A) To allow third-party websites to access cookies.
-B) To instruct the browser to disable third-party usage for specific cookies.
-C) To encrypt cookies to prevent eavesdropping.
-D) To store user credentials securely.
-Correct Answer: B
-
-
-## MCQ 6
-Question: Which of the following is NOT a characteristic of a well-designed anti-CSRF token?
-A) Unique for each user session.
-B) Easily predictable by an attacker.
-C) Cryptographically random value of significant length.
-D) Automatically expires after a suitable amount of time.
+Question: What is the function of the `SameSite` cookie attribute?
+A) It encrypts the cookie data.
+B) It instructs the browser to disable third-party usage for specific cookies.
+C) It extends the lifespan of the cookie.
+D) It allows the cookie to be accessed by any website.
 Correct Answer: B

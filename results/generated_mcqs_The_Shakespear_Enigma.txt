@@ -1,39 +1,39 @@
 ## MCQ 1
-Question: What were the fruits of the Shakespear tree described as?
-A) Golden apples
-B) Shimmering pears
-C) Glowing plums
-D) Silver berries
+Question: What was unusual about the pears on the Shakespear tree?
+A) They were poisonous.
+B) They shimmered with a golden hue.
+C) They tasted like apples.
+D) They grew upside down.
 Correct Answer: B
 
 ## MCQ 2
 Question: What did the villagers believe about the Shakespear tree?
 A) It brought bad luck.
-B) It granted immortality.
-C) It held magical properties.
-D) It whispered secrets.
-Correct Answer: C
+B) It held magical properties.
+C) It was cursed.
+D) It attracted dangerous animals.
+Correct Answer: B
 
 ## MCQ 3
 Question: What was Emma's dream?
-A) To become a painter
-B) To become a writer
-C) To become a musician
-D) To become a scientist
+A) To become a painter.
+B) To become a writer.
+C) To become a dancer.
+D) To become a scientist.
 Correct Answer: B
 
 ## MCQ 4
-Question: What happened after Emma ate the Shakespear fruit?
-A) She forgot her dreams.
-B) She experienced visions of her future.
+Question: What happened after Emma ate the Shakespear pear?
+A) She fell asleep.
+B) She experienced a whirlwind of visions.
 C) She became ill.
-D) She lost her ability to write.
+D) She lost her memory.
 Correct Answer: B
 
 ## MCQ 5
-Question: What effect did Emma's passion have on the villagers?
-A) They became jealous of her success.
-B) They were inspired to share their own stories.
-C) They ignored her.
-D) They left the village.
+Question: What effect did Emma's actions have on Eldermere?
+A) It became a ghost town.
+B) It became a hub of storytelling.
+C) It became famous for its apples.
+D) It became isolated from the outside world.
 Correct Answer: B
