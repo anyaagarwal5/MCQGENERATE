@@ -1,39 +1,40 @@
 ## MCQ 1
-Question: Which part of the nervous system controls reflex actions?
-A) Forebrain
-B) Midbrain
-C) Hindbrain
-D) Spinal cord
+Question: Which part of the brain is responsible for thinking and voluntary actions?
+A) Midbrain
+B) Hindbrain
+C) Cerebellum
+D) Forebrain
 Correct Answer: D
 
 ## MCQ 2
-Question: What is the function of auxin in plants?
+Question:  What is the function of Abscisic acid in plants?
 A) Promotes cell division
-B) Inhibits growth
-C) Helps in growth and phototropism
-D) Helps in the growth of the stem
+B) Helps in stem growth
+C) Inhibits growth and causes wilting of leaves
+D) Helps in growth and phototropism
 Correct Answer: C
 
 ## MCQ 3
-Question: Which gland is responsible for secreting insulin?
-A) Thyroid
-B) Pituitary
-C) Adrenal
-D) Pancreas
-Correct Answer: D
+Question: What is the name of the chemical messengers secreted by ductless glands in animals?
+A) Enzymes
+B) Neurotransmitters
+C) Hormones
+D) Receptors
+Correct Answer: C
 
 ## MCQ 4
-Question: What is the synapse?
-A) The gap between two neurons
-B) The point of contact between two neurons
-C) The cell body of a neuron
-D) The axon of a neuron
+Question:  Which part of the nervous system controls involuntary actions like heart beat and breathing?
+A) Forebrain
+B) Midbrain and Hindbrain
+C) Spinal cord
+D) Peripheral Nervous System
 Correct Answer: B
 
+
 ## MCQ 5
-Question: Which part of the brain is responsible for thinking and voluntary actions?
-A) Cerebellum
-B) Medulla
-C) Cerebrum
-D) Hypothalamus
-Correct Answer: C
+Question: What is the function of Insulin?
+A) Regulates growth and development
+B) Reduces and regulates blood sugar levels
+C) Increases blood pressure and heart rate
+D) Regulates metabolism of carbohydrates, fats, and proteins
+Correct Answer: B

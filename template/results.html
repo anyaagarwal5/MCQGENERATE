@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f29f78;
+            background-color: #ba4d5a;
             padding: 30px;
             margin: 0;
             overflow-x: hidden;
@@ -16,76 +16,109 @@
             width: 85%;
             margin: 0 auto;
             background: #ffffff;
-            padding: 30px;
+            padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            background-color: #ada1a1;
         }
         h1 {
             text-align: center;
-            color: #2b3e58;
+            color: #010a13;
             margin-bottom: 30px;
-            font-size: 45px;
+            font-size: 50px;
             font-family: 'Cursive', sans-serif;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             font-weight: bold;
+            color: #010c11;
         }
         .mcq {
             margin-bottom: 30px;
             padding: 25px;
-            background-color: #fef5e7;
-            border: 2px solid #d1d5f0;
+            background-color: #fafafa;
+            border: 2px solid #ccd1d9;
             border-radius: 12px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .mcq:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
         .question {
             font-weight: 700;
-            color: #4a4a4a;
+            color: #34495e;
             margin-bottom: 18px;
             font-size: 22px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .question:hover {
+            color: #1abc9c;
         }
         .options .option {
-            padding: 15px;
-            margin: 10px 0;
-            border: 2px solid #ccd1e4;
+            padding: 18px;
+            margin: 12px 0;
+            border: 2px solid #d6e1e8;
             border-radius: 10px;
             font-size: 18px;
             cursor: pointer;
-            background-color: #f8fafc;
+            background-color: #f3f6f9;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
-        .correct-answer {
-            font-weight: 700;
-            color: #2b8f3c;
-            margin-top: 18px;
-            font-size: 18px;
-            display: none;
+        .options .option:hover {
+            background-color: #ecf0f1;
+            transform: scale(1.05);
         }
-        .check-answer-btn, .score-btn {
-            margin-top: 15px;
-            padding: 10px 20px;
+        .check-answer-btn, .score-btn, .reset-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
             font-size: 16px;
             font-weight: bold;
-            background-color: #5a8dee;
+            background-color: #063084;
             color: #ffffff;
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
-        .download-links {
+        .check-answer-btn:hover, .score-btn:hover, .reset-btn:hover {
+            background-color: #4c7ec0;
+            transform: translateY(-3px);
+        }
+        .reset-btn {
+            background-color: #dc3545;
+            display: none;
+        }
+        .correct-answer {
+            display: none;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #010e13;
+        }
+        /* Confetti and popup styles */
+        .confetti-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 999;
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
+            align-items: center;
         }
-        .download-links a {
-            font-size: 18px;
-            font-weight: bold;
+        .confetti-popup div {
+            background-color: #007bff;
+            padding: 30px;
+            border-radius: 12px;
             color: #ffffff;
-            padding: 12px 25px;
-            background-color: #28a745;
-            border-radius: 8px;
-            text-decoration: none;
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
         }
     </style>
+    
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script>
         let score = 0;
@@ -107,35 +140,55 @@
             }
         }
 
-        function showScorePopup() {
-            const popup = document.createElement('div');
+        function showCorrectAnswer(button) {
+            const answerDiv = button.nextElementSibling;
+            answerDiv.style.display = 'block';
+            button.disabled = true;
+        }
 
-            popup.textContent = `Congratulations!!\n\nYour Score: ${score}`;
+        function showScorePopup() {
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+            overlay.style.zIndex = '999';
+            document.body.appendChild(overlay);
+        
+            const popup = document.createElement('div');
+            popup.textContent = `Your Score: ${score}`;
             popup.style.position = 'fixed';
             popup.style.left = '50%';
             popup.style.top = '50%';
             popup.style.transform = 'translate(-50%, -50%)';
-            popup.style.padding = '20px';
+            popup.style.padding = '30px';
             popup.style.backgroundColor = '#007bff';
             popup.style.color = '#fff';
-            popup.style.fontSize = '20px';
-            popup.style.borderRadius = '10px';
+            popup.style.fontSize = '24px';
+            popup.style.borderRadius = '12px';
+            popup.style.textAlign = 'center';
             popup.style.zIndex = '1000';
             document.body.appendChild(popup);
-
+        
+            document.querySelector('.reset-btn').style.display = 'inline-block';
             triggerConfetti();
-
+        
+            // Set timeout to remove the confetti and score popup after 3 seconds
             setTimeout(() => {
                 popup.remove();
-            }, 3000);
+                overlay.remove();
+                confetti();  // Stop the confetti effect
+            }, 3000);  // 3000ms (3 seconds)
         }
 
         function triggerConfetti() {
-            confetti({
-                particleCount: 150,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+        }
+
+        function resetQuiz() {
+            location.reload();
         }
     </script>
 </head>
@@ -152,16 +205,13 @@
                     <div class="option" onclick="handleOptionClick(event, '{{ mcq.split('Correct Answer:')[1].strip()[0] }}')">C) {{ mcq.split('C)')[1].split('D)')[0].strip() }}</div>
                     <div class="option" onclick="handleOptionClick(event, '{{ mcq.split('Correct Answer:')[1].strip()[0] }}')">D) {{ mcq.split('D)')[1].split('Correct Answer:')[0].strip() }}</div>
                 </div>
+                <button class="check-answer-btn" onclick="showCorrectAnswer(this)">Check Answer</button>
+                <div class="correct-answer">Correct Answer: {{ mcq.split('Correct Answer:')[1].strip() }}</div>
             </div>
             {% endif %}
         {% endfor %}
-
         <button class="score-btn" onclick="showScorePopup()">Show Score</button>
-
-        <div class="download-links">
-            <a href="/download/{{ txt_filename }}">Download as TXT</a>
-            <a href="/download/{{ pdf_filename }}">Download as PDF</a>
-        </div>
+        <button class="reset-btn" onclick="resetQuiz()">Reset Quiz</button>
     </div>
 </body>
 </html>
