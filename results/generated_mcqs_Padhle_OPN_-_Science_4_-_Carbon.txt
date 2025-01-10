@@ -1,15 +1,13 @@
-Since the provided text is just header information and doesn't contain factual content about carbon and its compounds,  I'll create general MCQs related to the context suggested by the header, assuming it refers to a study resource for 10th-grade science.
-
 ## MCQ 1
-Question: What is the primary topic of the notes mentioned in the header?
-A) Biology
-B) Physics
-C) Chemistry
-D) Carbon and its compounds
-Correct Answer: D
+Question: What is the main topic of these notes?
+A) Class 10 Mathematics
+B) Carbon and its Compounds
+C) Digital Power
+D) Vibe Media
+Correct Answer: B
 
 ## MCQ 2
-Question: What academic level are these notes designed for?
+Question:  For which class are these notes intended?
 A) Class 8
 B) Class 9
 C) Class 10
@@ -17,25 +15,33 @@ D) Class 11
 Correct Answer: C
 
 ## MCQ 3
-Question: What subject do these notes pertain to?
-A) Mathematics
-B) Science
-C) History
-D) Geography
-Correct Answer: B
+Question: What is the chapter number mentioned in the notes?
+A) C2
+B) C3
+C) C4
+D) C5
+Correct Answer: C
 
 ## MCQ 4
-Question: Which website hosts these notes?
-A) www.vibemedia.in
-B) www.padhle.in
-C) www.onepagenotes.com
-D) www.class10science.com
+Question: Which website provides the digital platform for these notes?
+A) www.padhle.in
+B) www.vibemedia.in
+C) www.carboncompounds.in
+D) www.class10science.in
 Correct Answer: B
 
 ## MCQ 5
-Question: What type of resource are these notes described as?
+Question: Where can these notes be downloaded from?
+A) www.vibemedia.in only
+B) www.padhle.in only
+C) Both www.padhle.in and www.vibemedia.in
+D) None of the above
+Correct Answer: B
+
+## MCQ 6
+Question: What is the format of these notes?
 A) Textbook
-B) Workbook
-C) One-page notes
-D) Question bank
-Correct Answer: C
+B) One Page Notes
+C) Multiple Chapters
+D) Question Bank
+Correct Answer: B

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCQ Results</title>
+    <title>MCQ Results with Confetti</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f29f78; /* Darker nude background color */
+            background-color: #f29f78;
             padding: 30px;
-            overflow-x: hidden;
             margin: 0;
+            overflow-x: hidden;
         }
         .container {
             width: 85%;
@@ -25,7 +25,7 @@
             color: #2b3e58;
             margin-bottom: 30px;
             font-size: 45px;
-            font-family: 'Cursive', sans-serif; /* Creative font */
+            font-family: 'Cursive', sans-serif;
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: bold;
@@ -36,11 +36,6 @@
             background-color: #fef5e7;
             border: 2px solid #d1d5f0;
             border-radius: 12px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .mcq:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         .question {
             font-weight: 700;
@@ -56,11 +51,6 @@
             font-size: 18px;
             cursor: pointer;
             background-color: #f8fafc;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-        .options .option:hover {
-            background-color: #e3e7f2;
-            transform: translateY(-2px);
         }
         .correct-answer {
             font-weight: 700;
@@ -69,7 +59,7 @@
             font-size: 18px;
             display: none;
         }
-        .check-answer-btn {
+        .check-answer-btn, .score-btn {
             margin-top: 15px;
             padding: 10px 20px;
             font-size: 16px;
@@ -79,10 +69,6 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .check-answer-btn:hover {
-            background-color: #4869c5;
         }
         .download-links {
             display: flex;
@@ -98,123 +84,58 @@
             background-color: #28a745;
             border-radius: 8px;
             text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .download-links a:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
-        }
-
-        /* Popup message */
-        .popup {
-            display: none;
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            z-index: 1000;
-        }
-        .popup.correct {
-            background-color: #28a745; /* Green for correct */
-            color: white;
-        }
-        .popup.incorrect {
-            background-color: #f44336; /* Red for incorrect */
-            color: white;
-        }
-        .popup-score {
-            display: none;
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            z-index: 1000;
-            background-color: #007bff; /* Blue for score popup */
-            color: white;
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script>
         let score = 0;
 
-        // Function to handle the answer click
         function handleOptionClick(event, correctAnswer) {
             const options = event.target.parentElement.querySelectorAll('.option');
             options.forEach(option => option.style.pointerEvents = 'none');
 
-            // If correct answer selected
             if (event.target.textContent.trim().startsWith(correctAnswer)) {
-                event.target.style.backgroundColor = '#4CAF50'; // Green for correct
-                showPopup('Correct!', 'correct'); // Show popup for correct answer
-                score++; // Increase score
-                confetti(); // Trigger confetti effect
+                event.target.style.backgroundColor = '#4CAF50';
+                score++;
             } else {
-                event.target.style.backgroundColor = '#F44336'; // Red for incorrect
+                event.target.style.backgroundColor = '#F44336';
                 options.forEach(option => {
                     if (option.textContent.trim().startsWith(correctAnswer)) {
-                        option.style.backgroundColor = '#4CAF50'; 
-                        showPopup('Oops! Try Again.', 'incorrect'); // Show red popup for incorrect answer
+                        option.style.backgroundColor = '#4CAF50';
                     }
                 });
             }
         }
 
-        // Function to display the score popup
         function showScorePopup() {
             const popup = document.createElement('div');
-            popup.textContent = `🎉 Congratulations!`;
-            popup.classList.add('popup-score');
-            popup.textContent = `Your Score: ${score}`;
+
+            popup.textContent = `Congratulations!!\n\nYour Score: ${score}`;
+            popup.style.position = 'fixed';
+            popup.style.left = '50%';
+            popup.style.top = '50%';
+            popup.style.transform = 'translate(-50%, -50%)';
+            popup.style.padding = '20px';
+            popup.style.backgroundColor = '#007bff';
+            popup.style.color = '#fff';
+            popup.style.fontSize = '20px';
+            popup.style.borderRadius = '10px';
+            popup.style.zIndex = '1000';
             document.body.appendChild(popup);
 
-            // Display popup and remove it after 3 seconds
+            triggerConfetti();
+
             setTimeout(() => {
-                popup.style.display = 'block';
-            }, 100);
-            setTimeout(() => {
-                popup.style.display = 'none';
                 popup.remove();
             }, 3000);
         }
 
-        // Show correct answer when clicked
-        function showCorrectAnswer(mcqElement) {
-            const correctAnswerDiv = mcqElement.querySelector('.correct-answer');
-            if (correctAnswerDiv) correctAnswerDiv.style.display = 'block';
-        }
-
-        // Confetti effect
-        function confetti() {
+        function triggerConfetti() {
             confetti({
-                particleCount: 100,
+                particleCount: 150,
                 spread: 70,
-                origin: { x: 0.5, y: 0.5 }
+                origin: { y: 0.6 }
             });
-        }
-
-        // Function to show a small popup (e.g., correct or incorrect)
-        function showPopup(message, type) {
-            const popup = document.createElement('div');
-            popup.classList.add('popup', type); // Add type class for correct or incorrect
-            popup.textContent = message;
-            document.body.appendChild(popup);
-            
-            // Display popup and remove it after 2 seconds
-            setTimeout(() => {
-                popup.style.display = 'block';
-            }, 100);
-            setTimeout(() => {
-                popup.style.display = 'none';
-                popup.remove();
-            }, 3000);
         }
     </script>
 </head>
@@ -231,20 +152,12 @@
                     <div class="option" onclick="handleOptionClick(event, '{{ mcq.split('Correct Answer:')[1].strip()[0] }}')">C) {{ mcq.split('C)')[1].split('D)')[0].strip() }}</div>
                     <div class="option" onclick="handleOptionClick(event, '{{ mcq.split('Correct Answer:')[1].strip()[0] }}')">D) {{ mcq.split('D)')[1].split('Correct Answer:')[0].strip() }}</div>
                 </div>
-                <button class="check-answer-btn" onclick="showCorrectAnswer(this.parentElement)">Check Answer</button>
-                <div class="correct-answer">
-                    Correct Answer: {{ mcq.split('Correct Answer:')[1].strip() }}
-                </div>
             </div>
             {% endif %}
         {% endfor %}
-        
-        <!-- Show Score Button -->
-        <button onclick="showScorePopup()" style="margin-top: 30px; padding: 12px 25px; background-color: #17a2b8; color: white; border: none; border-radius: 5px; font-size: 18px; cursor: pointer;">
-            Show Score
-        </button>
 
-        <!-- Download Links -->
+        <button class="score-btn" onclick="showScorePopup()">Show Score</button>
+
         <div class="download-links">
             <a href="/download/{{ txt_filename }}">Download as TXT</a>
             <a href="/download/{{ pdf_filename }}">Download as PDF</a>

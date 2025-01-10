@@ -1,40 +1,40 @@
 ## MCQ 1
-Question: What is Cross-Site Request Forgery (CSRF) also known as?
-A) XSS
-B) SQL Injection
-C) Sea Surf or Session Riding
-D) Phishing
-Correct Answer: C
+Question: What is Cross-Site Request Forgery (CSRF)?
+A) An attack that allows attackers to access a server without authentication.
+B) An attack that tricks a user's browser into executing unwanted actions in an application they are logged into.
+C) A type of malware that encrypts user data and demands a ransom.
+D) A phishing attack that attempts to steal user credentials.
+Correct Answer: B
 
 ## MCQ 2
 Question: Which of the following is NOT a potential consequence of a successful CSRF attack?
 A) Unauthorized fund transfers
 B) Changed passwords
-C) Data theft (stolen session cookies)
-D) Denial of Service (DoS)
+C) Data theft (e.g., stolen session cookies)
+D) Denial of Service (DoS) attack
 Correct Answer: D
 
 ## MCQ 3
-Question: How does CSRF exploit user authentication?
-A) By bypassing the login process
-B) By cracking the user's password
-C) By using the user's active session
-D) By installing malware on the user's computer
-Correct Answer: C
+Question: What is the primary purpose of an anti-CSRF token?
+A) To encrypt user data before transmission.
+B) To verify the authenticity of a user's request.
+C) To prevent brute-force attacks.
+D) To mask the user's IP address.
+Correct Answer: B
+
 
 ## MCQ 4
-Question: Which of these is a primary method for preventing CSRF attacks?
-A) Using strong passwords
-B) Installing a firewall
-C) Implementing anti-CSRF tokens
-D) Regularly updating software
-Correct Answer: C
-
+Question:  The `SameSite` cookie attribute helps prevent CSRF attacks by:
+A) Encrypting the cookie data.
+B) Restricting cookies to be sent only in a first-party context.
+C) Masking the user's IP address.
+D) Implementing two-factor authentication.
+Correct Answer: B
 
 ## MCQ 5
-Question: What is the function of the SameSite cookie attribute?
-A) To encrypt cookies
-B) To restrict cookie usage to first-party contexts
-C) To store user credentials securely
-D) To prevent XSS attacks
-Correct Answer: B
+Question: Which of the following is NOT a good practice for CSRF protection?
+A) Logging off web applications when not in use.
+B) Regularly updating usernames and passwords.
+C) Saving passwords in the browser for convenience.
+D) Avoiding simultaneously browsing while logged into sensitive applications.
+Correct Answer: C

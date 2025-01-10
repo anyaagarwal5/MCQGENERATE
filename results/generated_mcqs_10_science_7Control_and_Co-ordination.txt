@@ -1,21 +1,21 @@
 ## MCQ 1
-Question: Which part of the nervous system controls voluntary actions like talking and writing?
-A) Mid brain
-B) Hind brain
-C) Fore brain
+Question: Which part of the nervous system controls reflex actions?
+A) Forebrain
+B) Midbrain
+C) Hindbrain
 D) Spinal cord
-Correct Answer: C
+Correct Answer: D
 
 ## MCQ 2
-Question:  What is the function of abscisic acid in plants?
+Question: What is the function of auxin in plants?
 A) Promotes cell division
-B) Helps in stem growth
-C) Inhibits growth and causes wilting of leaves
-D) Helps in phototropism
+B) Inhibits growth
+C) Helps in growth and phototropism
+D) Helps in the growth of the stem
 Correct Answer: C
 
 ## MCQ 3
-Question:  Which gland is responsible for secreting insulin?
+Question: Which gland is responsible for secreting insulin?
 A) Thyroid
 B) Pituitary
 C) Adrenal
@@ -23,25 +23,17 @@ D) Pancreas
 Correct Answer: D
 
 ## MCQ 4
-Question:  What is the name of the specialized tips of nerve cells that detect information from the environment?
-A) Neurons
-B) Synapses
-C) Receptors
-D) Effectors
-Correct Answer: C
-
-## MCQ 5
-Question: Which part of the brain is responsible for controlling posture and balance?
-A) Cerebrum
-B) Cerebellum
-C) Medulla
-D) Pons
+Question: What is the synapse?
+A) The gap between two neurons
+B) The point of contact between two neurons
+C) The cell body of a neuron
+D) The axon of a neuron
 Correct Answer: B
 
-## MCQ 6
-Question: The junction between two neurons is called a:
-A) Dendrite
-B) Axon
-C) Synapse
-D) Cell body
+## MCQ 5
+Question: Which part of the brain is responsible for thinking and voluntary actions?
+A) Cerebellum
+B) Medulla
+C) Cerebrum
+D) Hypothalamus
 Correct Answer: C
