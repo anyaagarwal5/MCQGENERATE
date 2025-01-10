@@ -1,39 +1,48 @@
 ## MCQ 1
-Question: What was unusual about the pears on the Shakespear tree?
-A) They were poisonous.
+Question: What was unusual about the fruits of the Shakespear tree?
+A) They were shaped like apples.
 B) They shimmered with a golden hue.
-C) They tasted like apples.
-D) They grew upside down.
+C) They tasted like regular pears.
+D) They grew only during the summer.
 Correct Answer: B
 
 ## MCQ 2
-Question: What did the villagers believe about the Shakespear tree?
-A) It brought bad luck.
-B) It held magical properties.
-C) It was cursed.
-D) It attracted dangerous animals.
+Question: What did the villagers believe the Shakespear tree possessed?
+A) Healing properties
+B) Magical properties
+C) The ability to grant wishes
+D) The ability to control the weather
 Correct Answer: B
 
 ## MCQ 3
 Question: What was Emma's dream?
-A) To become a painter.
-B) To become a writer.
-C) To become a dancer.
-D) To become a scientist.
-Correct Answer: B
+A) To become a painter
+B) To become a musician
+C) To become a writer
+D) To become a scientist
+Correct Answer: C
 
 ## MCQ 4
-Question: What happened after Emma ate the Shakespear pear?
-A) She fell asleep.
-B) She experienced a whirlwind of visions.
-C) She became ill.
-D) She lost her memory.
+Question: What did Emma see in her vision after eating the Shakespear?
+A) Herself winning a cooking competition
+B) Herself standing on a grand stage, receiving applause
+C) Herself traveling the world
+D) Herself becoming the mayor of Eldermere
 Correct Answer: B
 
 ## MCQ 5
-Question: What effect did Emma's actions have on Eldermere?
-A) It became a ghost town.
-B) It became a hub of storytelling.
-C) It became famous for its apples.
-D) It became isolated from the outside world.
+Question: How did the villagers react to Emma's passion?
+A) They discouraged her from writing.
+B) They ignored her.
+C) They began sharing their own tales.
+D) They asked her to leave the village.
+Correct Answer: C
+
+
+## MCQ 6
+Question: What happened after Emma published her first book?
+A) It was a failure.
+B) It captured the hearts of many beyond Eldermere.
+C) It was only read by the villagers.
+D) She stopped writing.
 Correct Answer: B

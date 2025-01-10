@@ -126,9 +126,26 @@
             background-color: #f44336; /* Red for incorrect */
             color: white;
         }
+        .popup-score {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 1000;
+            background-color: #007bff; /* Blue for score popup */
+            color: white;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script>
+        let score = 0;
+
+        // Function to handle the answer click
         function handleOptionClick(event, correctAnswer) {
             const options = event.target.parentElement.querySelectorAll('.option');
             options.forEach(option => option.style.pointerEvents = 'none');
@@ -137,6 +154,7 @@
             if (event.target.textContent.trim().startsWith(correctAnswer)) {
                 event.target.style.backgroundColor = '#4CAF50'; // Green for correct
                 showPopup('Correct!', 'correct'); // Show popup for correct answer
+                score++; // Increase score
                 confetti(); // Trigger confetti effect
             } else {
                 event.target.style.backgroundColor = '#F44336'; // Red for incorrect
@@ -146,17 +164,35 @@
                         showPopup('Oops! Try Again.', 'incorrect'); // Show red popup for incorrect answer
                     }
                 });
-            
             }
         }
 
+        // Function to display the score popup
+        function showScorePopup() {
+            const popup = document.createElement('div');
+            popup.textContent = `🎉 Congratulations!`;
+            popup.classList.add('popup-score');
+            popup.textContent = `Your Score: ${score}`;
+            document.body.appendChild(popup);
+
+            // Display popup and remove it after 3 seconds
+            setTimeout(() => {
+                popup.style.display = 'block';
+            }, 100);
+            setTimeout(() => {
+                popup.style.display = 'none';
+                popup.remove();
+            }, 3000);
+        }
+
+        // Show correct answer when clicked
         function showCorrectAnswer(mcqElement) {
             const correctAnswerDiv = mcqElement.querySelector('.correct-answer');
             if (correctAnswerDiv) correctAnswerDiv.style.display = 'block';
         }
 
+        // Confetti effect
         function confetti() {
-            // Confetti effect
             confetti({
                 particleCount: 100,
                 spread: 70,
@@ -164,6 +200,7 @@
             });
         }
 
+        // Function to show a small popup (e.g., correct or incorrect)
         function showPopup(message, type) {
             const popup = document.createElement('div');
             popup.classList.add('popup', type); // Add type class for correct or incorrect
@@ -202,6 +239,11 @@
             {% endif %}
         {% endfor %}
         
+        <!-- Show Score Button -->
+        <button onclick="showScorePopup()" style="margin-top: 30px; padding: 12px 25px; background-color: #17a2b8; color: white; border: none; border-radius: 5px; font-size: 18px; cursor: pointer;">
+            Show Score
+        </button>
+
         <!-- Download Links -->
         <div class="download-links">
             <a href="/download/{{ txt_filename }}">Download as TXT</a>
