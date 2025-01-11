@@ -1,40 +1,31 @@
 ## MCQ 1
 Question: Which part of the brain is responsible for thinking and voluntary actions?
-A) Midbrain
-B) Hindbrain
-C) Cerebellum
-D) Forebrain
-Correct Answer: D
+A) Cerebellum
+B) Medulla
+C) Cerebrum
+D) Pons
+Correct Answer: C
 
 ## MCQ 2
-Question:  What is the function of Abscisic acid in plants?
-A) Promotes cell division
-B) Helps in stem growth
-C) Inhibits growth and causes wilting of leaves
-D) Helps in growth and phototropism
-Correct Answer: C
-
-## MCQ 3
-Question: What is the name of the chemical messengers secreted by ductless glands in animals?
-A) Enzymes
-B) Neurotransmitters
-C) Hormones
-D) Receptors
-Correct Answer: C
-
-## MCQ 4
-Question:  Which part of the nervous system controls involuntary actions like heart beat and breathing?
-A) Forebrain
-B) Midbrain and Hindbrain
-C) Spinal cord
-D) Peripheral Nervous System
-Correct Answer: B
-
-
-## MCQ 5
-Question: What is the function of Insulin?
+Question: What is the function of the hormone insulin?
 A) Regulates growth and development
 B) Reduces and regulates blood sugar levels
 C) Increases blood pressure and heart rate
 D) Regulates metabolism of carbohydrates, fats, and proteins
 Correct Answer: B
+
+## MCQ 3
+Question:  What is a synapse?
+A) The gap between the axon of one neuron and the dendrite of another
+B) The cell body of a neuron
+C) A type of receptor in the skin
+D) A specialized nerve cell that detects information from the environment
+Correct Answer: A
+
+## MCQ 4
+Question: Which plant hormone inhibits growth and causes wilting of leaves?
+A) Auxin
+B) Gibberellin
+C) Cytokinins
+D) Abscisic acid
+Correct Answer: D
