@@ -1,31 +1,39 @@
 ## MCQ 1
-Question: Which part of the brain is responsible for thinking and voluntary actions?
-A) Cerebellum
-B) Medulla
-C) Cerebrum
-D) Pons
+Question: Which part of the nervous system controls voluntary actions like talking and writing?
+A) Midbrain
+B) Hindbrain
+C) Forebrain
+D) Spinal cord
 Correct Answer: C
 
 ## MCQ 2
-Question: What is the function of the hormone insulin?
-A) Regulates growth and development
-B) Reduces and regulates blood sugar levels
-C) Increases blood pressure and heart rate
-D) Regulates metabolism of carbohydrates, fats, and proteins
-Correct Answer: B
+Question: What is the function of abscisic acid in plants?
+A) Promotes cell division
+B) Helps in stem growth
+C) Inhibits growth and causes wilting of leaves
+D) Helps in phototropism
+Correct Answer: C
 
 ## MCQ 3
-Question:  What is a synapse?
-A) The gap between the axon of one neuron and the dendrite of another
-B) The cell body of a neuron
-C) A type of receptor in the skin
-D) A specialized nerve cell that detects information from the environment
-Correct Answer: A
+Question: Which gland is responsible for secreting the hormone that regulates blood sugar levels?
+A) Pituitary gland
+B) Adrenal gland
+C) Thyroid gland
+D) Pancreas
+Correct Answer: D
 
 ## MCQ 4
-Question: Which plant hormone inhibits growth and causes wilting of leaves?
-A) Auxin
-B) Gibberellin
-C) Cytokinins
-D) Abscisic acid
+Question:  The gap between two neurons is called a:
+A) Dendrite
+B) Axon
+C) Synapse
+D) Receptor
+Correct Answer: C
+
+## MCQ 5
+Question:  Which hormone is responsible for the development of secondary sexual characteristics in males, such as the growth of a beard?
+A) Insulin
+B) Adrenaline
+C) Thyroxine
+D) Testosterone
 Correct Answer: D

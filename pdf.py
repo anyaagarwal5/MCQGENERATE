@@ -14,7 +14,7 @@ st.set_page_config(layout="wide", page_title="PDF Summarization App")
 # Load model and tokenizer
 model_name = "t5-small"
 tokenizer = T5Tokenizer.from_pretrained(model_name)
-model = T5ForConditionalGeneration.from_pretrained(model_name)
+model = T5ForConditionalGeneration.from_pretrained(model_name)#encoder decoder 
 
 def summarize(text, max_length=500):
     # Summarize the document with the user-defined max_length
@@ -126,7 +126,7 @@ def main():
                 st.write(summary)
 
                 # Provide option to save summary as PDF
-                if st.button("Save Summary as PDF"):
+                if st.button("save F"):
                     pdf_file_path = save_summary_as_pdf(summary)
                     st.success("Summary saved as PDF!")
                     with open(pdf_file_path, "rb") as pdf_file:
@@ -137,16 +137,7 @@ def main():
                             mime="application/pdf"
                         )
 
-                # Ask user to input reference summary for ROUGE score
-                reference_summary = st.text_area("Enter reference summary for ROUGE score evaluation", "")
-                
-                if reference_summary:
-                    # Calculate ROUGE score only if the reference summary is provided
-                    rouge_scores = calculate_rouge_scores(reference_summary, summary)
-                    st.write("ROUGE Scores:")
-                    st.write(f"ROUGE-1: {rouge_scores['rouge1']}")
-                    st.write(f"ROUGE-2: {rouge_scores['rouge2']}")
-                    st.write(f"ROUGE-L: {rouge_scores['rougeL']}")
+               
 
 if __name__ == "__main__":
     main()

@@ -5,10 +5,12 @@ import docx
 import csv
 from werkzeug.utils import secure_filename
 import google.generativeai as genai
-from fpdf import FPDF  # pip install fpdf
+from fpdf import FPDF  
+from dotenv import load_dotenv
 
-# Set your API key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyArt_l2lTLRYKUmPsZ_jkoAhb17TdKuS-w"
+
+load_dotenv()
+
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("models/gemini-1.5-pro")
 
